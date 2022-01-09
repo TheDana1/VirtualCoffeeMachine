@@ -1,7 +1,5 @@
 package machine;
 
-import static machine.CoffeeTypes.ESPRESSO;
-
 //A class that represents a coffee machine
 public class CoffeeMachine {
     int waterAmount;
@@ -110,7 +108,7 @@ public class CoffeeMachine {
 
 
     public void coffee(String choice){
-        CoffeeTypes type = ESPRESSO;
+        CoffeeTypes type = CoffeeTypes.ESPRESSO;
         switch (choice) {
             case "back":
                 mainMenu();
