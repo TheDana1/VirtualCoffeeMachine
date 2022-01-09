@@ -66,7 +66,6 @@ public class CoffeeMachine {
 
     public void addingCups(String input) {
         this.cups += Integer.parseInt(input);
-        state = MachineStates.ADDINGCUPS;
         mainMenu();
     }
 
