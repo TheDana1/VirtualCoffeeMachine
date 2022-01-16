@@ -7,7 +7,7 @@ public class CoffeeMachine {
     int beansAmount;
     int money;
     int cups;
-    MachineStates state;
+    MachineState state;
 
     public CoffeeMachine() {
         this.waterAmount = 400;
@@ -20,7 +20,7 @@ public class CoffeeMachine {
 
     public void mainMenu() {
         System.out.println("\nWrite action (buy, fill, take, remaining, exit):");
-        state = MachineStates.MAINMENU;
+        state = MachineState.MAINMENU;
     }
 
     public void stateHandler(String input) {
@@ -48,25 +48,25 @@ public class CoffeeMachine {
 
     public void addingWater(String input) {
         waterAmount += Integer.parseInt(input);
-        state = MachineStates.ADDINGMILK;
+        state = MachineState.ADDINGMILK;
         System.out.println("Write how many ml of milk you want to add:");
     }
 
     public void addingMilk(String input) {
         milkAmount += Integer.parseInt(input);
-        state = MachineStates.ADDINGBEANS;
+        state = MachineState.ADDINGBEANS;
         System.out.println("Write how many grams of coffee beans you want to add:");
     }
 
     public void addingBeans(String input) {
         beansAmount += Integer.parseInt(input);
-        state = MachineStates.ADDINGCUPS;
+        state = MachineState.ADDINGCUPS;
         System.out.println("Write how many disposable cups of coffee you want to add: ");
     }
 
     public void addingCups(String input) {
         this.cups += Integer.parseInt(input);
-        state = MachineStates.ADDINGCUPS;
+        state = MachineState.ADDINGCUPS;
         mainMenu();
     }
 
@@ -75,7 +75,7 @@ public class CoffeeMachine {
                         "%d ml of water\n%d ml of milk\n%d g of coffee beans\n" +
                         "%d disposable cups\n$%d of money \n", this.waterAmount, this.milkAmount,
                 this.beansAmount, this.cups, this.money);
-        state = MachineStates.PRINTINGSTATUS;
+        state = MachineState.PRINTINGSTATUS;
         mainMenu();
     }
 
@@ -83,7 +83,7 @@ public class CoffeeMachine {
         switch (input) {
             case "buy":
                 buy();
-                state = MachineStates.CHOOSINGCOFFEE;
+                state = MachineState.CHOOSINGCOFFEE;
                 break;
             case "take":
                 this.take();
@@ -96,7 +96,7 @@ public class CoffeeMachine {
                 break;
             case "fill":
                 System.out.println("Write how many ml of water you want to add:");
-                state = MachineStates.ADDINGWATER;
+                state = MachineState.ADDINGWATER;
             default:
                 break;
         }
@@ -108,19 +108,19 @@ public class CoffeeMachine {
 
 
     public void coffee(String choice){
-        CoffeeTypes type = CoffeeTypes.ESPRESSO;
+        CoffeeType type = CoffeeType.ESPRESSO;
         switch (choice) {
             case "back":
                 mainMenu();
                 break;
             case "1":
-                type = CoffeeTypes.ESPRESSO;
+                type = CoffeeType.ESPRESSO;
                 break;
             case "2":
-                type = CoffeeTypes.LATTE;
+                type = CoffeeType.LATTE;
                 break;
             case "3":
-                type = CoffeeTypes.CAPPUCCINO;
+                type = CoffeeType.CAPPUCCINO;
                 break;
             default:
                 System.out.println("Invalid choice");
@@ -137,7 +137,7 @@ public class CoffeeMachine {
         money += cost;
     }
 
-    public void ingredientsCalculator(CoffeeTypes coffeeType) {
+    public void ingredientsCalculator(CoffeeType coffeeType) {
         if (waterAmount < coffeeType.getWaterNeeded()) {
             System.out.println("Sorry, not enough water!");
             mainMenu();
@@ -165,7 +165,7 @@ public class CoffeeMachine {
     public void take(){
         System.out.printf("I gave you $%d \n", this.money);
         this.money = 0;
-        state = MachineStates.EMPTYINGMONEY;
+        state = MachineState.EMPTYINGMONEY;
         mainMenu();
 
     }

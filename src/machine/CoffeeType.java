@@ -1,6 +1,6 @@
 package machine;
 
-public enum CoffeeTypes {
+public enum CoffeeType {
     ESPRESSO(250, 0, 16, 4),
     LATTE(350, 75, 20,7 ),
     CAPPUCCINO(200, 100, 12, 6);
@@ -11,7 +11,7 @@ public enum CoffeeTypes {
     private int beansNeeded;
 
 
-    CoffeeTypes(int water, int milk, int beans, int cost) {
+    CoffeeType(int water, int milk, int beans, int cost) {
         this.waterNeeded = water;
         this.milkNeeded = milk;
         this.beansNeeded = beans;

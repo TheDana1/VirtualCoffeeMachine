@@ -1,6 +1,6 @@
 package machine;
 
-public enum MachineStates{
+public enum MachineState{
     PRINTINGSTATUS, MAINMENU, CHOOSINGCOFFEE, OFF, ADDINGWATER, ADDINGMILK, ADDINGCUPS, ADDINGBEANS, EMPTYINGMONEY
 
 }

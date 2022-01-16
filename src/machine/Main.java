@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         CoffeeMachine coffeeMachine = new CoffeeMachine();
         final Scanner scanner = new Scanner(System.in);
-        while (coffeeMachine.state != MachineStates.OFF) {
+        while (coffeeMachine.state != MachineState.OFF) {
             coffeeMachine.stateHandler(scanner.nextLine());
         }
     }
