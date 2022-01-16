@@ -1,6 +1,6 @@
 package machine;
 
-//A class that represents a coffee machine
+//Class that represents a coffee machine
 public class CoffeeMachine {
     int waterAmount;
     int milkAmount;

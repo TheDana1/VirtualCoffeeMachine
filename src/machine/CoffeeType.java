@@ -1,5 +1,6 @@
 package machine;
 
+//Represents different tpes of coffee
 public enum CoffeeType {
     ESPRESSO(250, 0, 16, 4),
     LATTE(350, 75, 20,7 ),

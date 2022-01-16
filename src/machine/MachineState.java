@@ -1,5 +1,6 @@
 package machine;
 
+//Different Machine States
 public enum MachineState{
     PRINTINGSTATUS, MAINMENU, CHOOSINGCOFFEE, OFF, ADDINGWATER, ADDINGMILK, ADDINGCUPS, ADDINGBEANS, EMPTYINGMONEY
 
